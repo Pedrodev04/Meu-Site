@@ -1,0 +1,992 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    color: white;
+    font-family: poppins;
+    background:linear-gradient(to left, red,rgb(45, 41, 41),black,red);
+    height: 100vh;
+}
+/* topo do site */
+.conteiner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    flex-direction: column;
+    max-width: 1280px;
+    margin: 0 auto;
+    height: 100vh;
+}
+.conteiner nav ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+    list-style-type: none;
+    border: 1px solid white;
+    border-radius: 15px;
+}
+.conteiner nav ul li{
+    width: 200px;
+    text-align: center;
+    margin: 10px;
+    padding: 10px 10px;
+    border-radius: 20px;
+    transition: .2s;
+}
+.conteiner a{
+    text-decoration: none;
+    color: rgb(175, 173, 173);
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-block;
+    transition: .2s;   
+}
+header a:hover{
+    color: white;
+    transform: scale(1.05);
+}
+.conteiner nav ul li:hover{
+    color: white;
+    transform: scale(1.05);
+}
+/* estilo do menu mobile */
+.btn-abrir-menu{
+    display: none; 
+}
+.btn-abrir-menu i{
+    color: white;
+    font-size: 40px;
+}
+.menu-mobile{
+    background-color: black;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 9999999;
+    width: 0%;
+    overflow: hidden;
+    transition: .5s;
+}
+.menu-mobile.abrir-menu{
+    width: 70%;
+}
+.menu-mobile.abrir-menu ~ .overlay-menu{
+    display: block;
+} 
+.menu-mobile .btn-fechar{
+    padding: 20px 5%;
+}
+.menu-mobile .btn-fechar i{
+    color: white;
+    font-size: 30px;
+}
+.menu-mobile nav ul{
+    text-align: right;
+    flex-direction: column;
+}
+.menu-mobile nav ul li a{
+    color: white;
+    font-size: 20px;
+    font-weight: 300;
+    padding: 20px 8%;
+    display: block;
+}
+.menu-mobile nav ul li a:hover{
+    background-color: red;
+    color: black;
+}
+.overlay-menu{
+    background-color: rgba(0, 0, 0, 0.541);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 88888;
+    display: none;
+}
+/* imagens e apresentacao */
+.img-topo-site{
+    padding-top: 5%;
+}
+.img-topo-site img{
+    position: relative;
+    animation: flutuar 2s ease-in-out infinite alternate;
+    margin-bottom: 10px;
+    border-radius: 15% 15% 0 0; /* ajuste o valor conforme necessário para controlar o arredondamento */
+    box-shadow: 2px 2px 20px white;
+}     
+@keyframes flutuar{
+    0%{
+        top: 0;
+
+    }
+    100%{
+        top: 30px;
+        box-shadow: 2px 2px 20px black;
+    }
+}
+.conteiner h1{
+    text-align: center;
+    font-size: 35px;
+    width: 80% ;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+.conteiner h2{
+    text-align: center;
+    font-size: 30px;
+    width: 80%;
+    padding: 12px 12px;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+/* icones */
+.icones-nav {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.icones-nav a{
+    margin: 30px;
+    font-size: 40px;
+}
+/* seta de rolagem */
+#scroll-arrow {
+    display: none; /* Inicialmente oculto */
+    position: fixed;
+    right:10px;
+    bottom: 10px;
+    padding: 3px;
+    color: white;
+    text-align:center;
+    font-size: 50px;
+    transition: opacity 0.5s ease;
+    border: none;
+    border-radius: 50%;
+    z-index: 100000;
+  }
+#scroll-arrow:hover {
+    opacity: 0.8;
+  }
+/* texto apresentativo */
+.txt-apresentacao{
+    padding: 40px 20%;
+}
+.txt-apresentacao .inicio-txt{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    border-radius: 24px;
+    flex-direction: column;
+}
+.txt-apresentacao h1{
+    font-size: 40px;
+    text-align: center;
+    margin-bottom:4%;
+    background:linear-gradient(to bottom, rgb(36, 36, 134),white, rgb(36, 36, 134));
+    background-clip: text;
+    display: inline-block;
+    color: transparent;
+    animation: animated 5s linear infinite;
+}
+.inicio-txt .texto p{
+    font-size: 20px;
+    text-align: center;
+    width: 600px;
+}
+.inicio-txt .img-txt img{
+    border-radius: 20px;
+    margin-top: 5%;
+    width: 450px;
+}
+/* sobre mim */
+.sobre-mim{
+    padding: 40px 11%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.inicio-sobre h1{
+    text-align: center;
+    font-size: 40px;
+}
+.inicio-sobre h1 span{
+    background:linear-gradient(to bottom, rgb(36, 36, 134),white, rgb(36, 36, 134));
+    background-clip: text;
+    display: inline-block;
+    color: transparent;
+    animation: animated 5s linear infinite;  
+}
+@keyframes animated{
+    to {background-position-x: 161px}
+}
+.inicio-sobre .conteudo{
+    display: flex;
+    padding: 50px 150px;
+    text-align: center;
+    border-radius: 24px;
+}
+.conteudo .img-sobre{
+    width: 100%;
+    margin-right: 50px;
+}
+.conteudo .img-sobre img{
+    border-radius: 15% 0 15% 0;
+    width: 250px;
+    box-shadow: 2px 2px 20px white;
+    animation: zoom 5s infinite; /* 5 segundos de duração, repete infinitamente */
+    transition: transform 0.3s ease-in-out; /* Suave transição */
+}
+/* Define a animação de zoom */
+@keyframes zoom {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+      box-shadow: 2px 2px 20px red;
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+.conteudo p{
+    width: 300px;
+    text-align: center;
+    font-size: 20px;
+    padding-top: 20px;
+}
+/* projetos */
+.inicio-projetos h1{
+    font-size: 40px;
+    text-align: center;
+}
+.inicio-projetos h1 span{
+    background: linear-gradient(to bottom,rgb(36, 36, 134),white, rgb(36, 36, 134));
+    background-clip: text;
+    display: inline-block;
+    color: transparent;
+    animation: animated 5s linear infinite;
+}
+.inicio-projetos .animacao h1{
+    font-size: 18px;
+}
+.animacao span{
+    position: relative;
+}
+.animacao span::before{
+    content: "";
+    color: rgba(128, 128, 128, 0.274);
+    animation: palavras 20s infinite;
+}
+.animacao span::after{
+    content: "";
+    position: absolute;
+    height: 100%;
+    border-left: 2px solid white;
+    right: -10px;
+    animation: cursor .8s infinite, digita 20s steps(15) infinite;
+    width: calc(100% + 10px);
+    background: linear-gradient(to left,rgb(45, 41, 41),black)
+}
+@keyframes digita {
+    10%, 15%, 30%, 35%, 50%, 55%, 70%, 75%, 90%, 95%{
+        width: 0;
+    }
+    5%, 20%, 25%, 40%, 45%, 60%, 65%, 80%, 85%{
+        width:calc(100% + 15px);
+    }
+    
+}
+@keyframes cursor {
+    0%{
+        border-left: 2px solid rgb(45, 41, 41);
+    }
+    
+}
+@keyframes palavras{
+    0%, 100%{
+        content: "no projeto para acessá-lo.";
+    }
+}
+.projetos{
+    padding: 80px 4%;
+    box-shadow: 2px 2px 20px cyan;
+}
+.projetos .conteudo-projetos{
+    justify-content: space-evenly;
+    margin: 20px;
+    display: flex;
+    text-align: center;
+}
+.projetos .conteudo-projetos2{
+    justify-content: space-evenly;
+    display: flex;
+    text-align: center;
+    width: 100%; /* Ajuste conforme necessário */
+    padding: 10px;
+    position: relative;
+    margin-top: 5%;
+}
+.vermais {
+    padding: 5px 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 5%;
+    box-shadow: 2px 2px 20px white;
+    text-decoration: none;
+}
+.vermais:focus {
+    outline: none;
+}
+.img-port{
+    width: 300px;
+    height: 200px;
+    background-size: 100%;
+    background-position: center;
+    transition: 5s;
+    cursor: pointer;
+    position: relative;
+    border-radius: 15px;
+    box-shadow: 2px 2px 20px white;
+}
+.img-port:hover{
+    background-position: 100% 100%;
+}
+.img-port2{
+    width: 300px;
+    height: 200px;
+    background-size: 100%;
+    background-position: center;
+    transition: .5s;
+    cursor: pointer;
+    position: relative;
+    border-radius: 15px;
+    box-shadow: 2px 2px 20px white;
+}
+.img-port2:hover{
+    background-position: 100% 100%;
+}
+.img-port3{
+    width: 300px;
+    height: 200px;
+    background-size: 100%;
+    background-position: center;
+    transition: 5s;
+    cursor: pointer;
+    position: relative;
+    border-radius: 15px;
+    box-shadow: 2px 2px 20px white;
+}
+.img-port3:hover{
+    background-position: 100% 100%;
+}
+.img-port4{
+    width: 300px;
+    height: 200px;
+    background-size: 100%;
+    background-position: center;
+    transition: 5s;
+    cursor: pointer;
+    position: relative;
+    border-radius: 15px;
+    box-shadow: 2px 2px 20px white;
+    display: none; /* Inicialmente oculto */
+    margin-top: 10px;
+}
+.img-port4:hover{
+    background-position: 100% 100%;
+}
+.img-port5{
+    width: 300px;
+    height: 200px;
+    background-size: 100%;
+    background-position: center;
+    transition: 5s;
+    cursor: pointer;
+    position: relative;
+    border-radius: 15px;
+    box-shadow: 2px 2px 20px white;
+    display: none; /* Inicialmente oculto */
+    margin-top: 10px;
+}
+.img-port5:hover{
+    background-position: 100% 100%;
+}
+.img-port6{
+    width: 300px;
+    height: 200px;
+    background-size: 100%;
+    background-position: center;
+    transition: 5s;
+    cursor: pointer;
+    position: relative;
+    border-radius: 15px;
+    box-shadow: 2px 2px 20px white;
+    display: none; /* Inicialmente oculto */
+    margin-top: 10px;
+}
+.img-port6:hover{
+    background-position: 100% 100%;
+}
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 600;
+    background-color: #000000b8;
+    opacity: 0;
+    transition: .5s;
+}
+.overlay a{
+    text-decoration: none;
+    color: #fff;
+    transition: .2s;
+}
+.overlay:hover{
+    opacity: 1;
+}
+/* meus serviços */
+.inicio-servicos h1{
+    text-align: center;
+    font-size: 40px;
+}
+.inicio-servicos h1 span{
+    background:linear-gradient(to bottom,rgb(36, 36, 134),white, rgb(36, 36, 134));
+    background-clip: text;
+    display: inline-block;
+    color: transparent;
+    animation: animated 5s linear infinite;  
+}
+@keyframes animated{
+    to {background-position-x: 161px}
+}
+.servi{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.servicos{
+    margin: 30px;
+    text-align: center;
+}
+.servicos .h1-servicos{
+    font-size: 30px;
+}
+.servicos .orcamento{
+    padding: 15px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    background-color: rgb(23, 23, 192);
+    box-shadow: 2px 2px 20px rgb(23, 23, 192);
+    cursor: pointer;
+    margin-top: 20px;
+}
+.servicos .orcamento a{
+    text-decoration: none;
+    font-size: 25px; 
+    color: white;
+    transition: .2s;
+    display: inline-block;
+}
+.orcamento a:hover{
+    transform: scale(1.05);
+}
+.servicos2{
+    margin: 30px;
+    text-align: center;
+}
+.servicos2 .h1-servicos2{
+    font-size: 30px;
+}
+.servicos2 .orcamento2{
+    padding: 15px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    background-color: rgb(23, 23, 192);
+    box-shadow: 2px 2px 20px rgb(23, 23, 192);
+    cursor: pointer;
+    margin-top: 20px;
+}
+.servicos2 .orcamento2 a{
+    text-decoration: none;
+    font-size: 25px; 
+    color: white;
+    transition: .2s;
+    display: inline-block;
+}
+.orcamento2 a:hover{
+    transform: scale(1.05);
+}
+.servicos .img-servi{
+    box-shadow: 2px 2px 30px black;
+}
+.servicos2 .img-servi2 {
+    box-shadow: 2px 2px 30px black;
+}
+/* entre em contato */
+.contato{
+    text-align: center;
+}
+.contato button a{
+    text-decoration: none;
+    color: black;
+}
+.contato button{
+    padding: 20px 20px;
+    font-size: 25px;
+    font-weight: 700;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: .2s;
+}
+.contato button:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 8px white;
+    background-color: black;
+}
+.contato button a:hover{
+    transform: scale(1.05);
+    color: white;
+}
+/* rodape */
+.rodape{
+    padding: 40px 11%;
+}
+.conteudo-rodape{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.conteudo-rodape nav ul{
+    list-style-type: none;
+    padding: 15px;
+    display: flex;
+}
+.conteudo-rodape nav ul li{
+    padding: 8px 8px;
+    background-color: white;
+    margin: 10px;
+    transition: .2s;
+    border-radius: 50% 10% 50% 10% / 10% 50% 10% 50%;
+}
+.conteudo-rodape a i{
+    font-size: 30px;
+    cursor: pointer;
+    color: black;
+    transition: .2s;
+    display: inline-block;
+}
+.conteudo-rodape a i:hover{
+    transform: scale(1.05);
+    color: white;
+}
+.conteudo-rodape nav ul li:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 8px white;
+    background-color: black;
+}
+.email{
+    text-align: center;
+    font-size: 20px;
+}
+.email a{
+    color: white;
+}
+/* efeito javascript */
+.h1-txt{
+    opacity: 0;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    transform: translateX(-50%);
+}
+.h1-txt.visible{
+    opacity: 1;
+    transform: translateY(0);
+}
+.texto{
+    opacity: 0;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    transform: translateX(-50%);
+}
+.texto.visible{
+    opacity: 1;
+    transform: translateY(0);
+}
+.img-txt{
+    opacity: 0;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    transform: translateX(-50%);
+}
+.img-txt.visible{
+    opacity: 1;
+    transform: translateY(0);
+}
+.h1-sobre{
+    opacity: 0;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    transform: translateX(-50%);
+}
+.h1-sobre.visible{
+    opacity: 1;
+    transform: translateY(0);
+}
+.img-sobre{
+    opacity: 0;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    transform: translateX(-50%);
+}
+.img-sobre.visible{
+    opacity: 1;
+    transform: translateY(0);
+}
+.p-sobre{
+    opacity: 0;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    transform: translateX(-50%);
+}
+.p-sobre.visible{
+    opacity: 1;
+    transform: translateY(0);
+}
+.h1-projetos{
+    opacity: 0;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    transform: translateX(-50%);
+}
+.h1-projetos.visible{
+    opacity: 1;
+    transform: translateY(0);
+}
+.img-port{
+    opacity: 0;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; 
+    transform: translateX(-50%);
+}
+.img-port.visible{
+    opacity: 1;
+    transform: translateX(0);
+}
+.img-port2{
+    opacity: 0;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; 
+    transform: translateX(-50%);
+}
+.img-port2.visible{
+    opacity: 1;
+    transform: translateX(0);
+}
+.img-port3{
+    opacity: 0;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; 
+    transform: translateX(-50%);
+}
+.img-port3.visible{
+    opacity: 1;
+    transform: translateX(0);
+}
+.img-port4{
+    opacity: 0;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; 
+    transform: translateX(-50%);
+}
+.img-port4.visible{
+    opacity: 1;
+    transform: translateX(0);
+}
+.img-port5{
+    opacity: 0;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; 
+    transform: translateX(-50%);
+}
+.img-port5.visible{
+    opacity: 1;
+    transform: translateX(0);
+}
+.img-port6{
+    opacity: 0;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; 
+    transform: translateX(-50%);
+}
+.img-port6.visible{
+    opacity: 1;
+    transform: translateX(0);
+}
+.rodape{
+    opacity: 0;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; 
+    transform: translateX(-50%);
+}
+.rodape.visible{
+    opacity: 1;
+    transform: translateX(0);
+}
+.inicio-servicos{
+    opacity: 0;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; 
+    transform: translateX(-50%);
+}
+.inicio-servicos.visible{
+    opacity: 1;
+    transform: translateX(0);
+}
+.img-servi{
+    opacity: 0;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; 
+    transform: translateX(-50%);
+}
+.img-servi.visible{
+    opacity: 1;
+    transform: translateX(0);
+}
+.h1-servicos{
+    opacity: 0;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; 
+    transform: translateX(-50%);
+}
+.h1-servicos.visible{
+    opacity: 1;
+    transform: translateX(0);
+}
+.orcamento{
+    opacity: 0;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; 
+    transform: translateX(-50%);
+}
+.orcamento.visible{
+    opacity: 1;
+    transform: translateX(0);
+}
+.img-servi2{
+    opacity: 0;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; 
+    transform: translateX(-50%);
+}
+.img-servi2.visible{
+    opacity: 1;
+    transform: translateX(0);
+}
+.h1-servicos2{
+    opacity: 0;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; 
+    transform: translateX(-50%);
+}
+.h1-servicos2.visible{
+    opacity: 1;
+    transform: translateX(0);
+}
+.orcamento2{
+    opacity: 0;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; 
+    transform: translateX(-50%);
+}
+.orcamento2.visible{
+    opacity: 1;
+    transform: translateX(0);
+}
+.animacao{
+    opacity: 0;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; 
+    transform: translateX(-50%);
+}
+.animacao.visible{
+    opacity: 1;
+    transform: translateX(0);
+}
+.vermais{
+    opacity: 0;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; 
+    transform: translateX(-50%);
+}
+.vermais.visible{
+    opacity: 1;
+    transform: translateX(0);
+}
+/* responsivo */
+@media screen and (max-width: 1200px){
+     /* menu mobile */
+     .btn-abrir-menu{
+        display: block;
+    }
+    .cabecalho{
+        display: none;
+    }
+    .conteiner nav ul li{
+        width:100%;
+        padding: 5%;
+        margin-top: 40px;
+        text-align: right;
+    }
+    .icones-nav nav ul li{
+        margin-top: 20px;
+    }
+    /* textos abaixo da imagem */
+    .conteiner{
+        width: 100%;
+    }
+    .conteiner nav ul{
+        border: none;
+    }
+    /* apresentacao */
+    .txt-apresentacao{
+        padding: 20px 3%;
+        margin-top: 5px;
+    }
+    .txt-apresentacao h1{
+        font-size: 30px;
+    }
+    .txt-apresentacao .inicio-txt{
+        flex-direction: column-reverse;
+        box-shadow: none;
+    }
+    .inicio-txt .img-txt img{
+        width: 100%;
+    }
+    .inicio-txt .texto p{
+        font-size: 18px;
+        text-align: center;
+        width: 100%;
+    }
+    /* sobre mim */
+    .sobre-mim{
+        padding: 20px 3%;
+    }
+    @keyframes zoom {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+          box-shadow: 2px 2px 20px black;
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+    .inicio-sobre .conteudo{
+        flex-direction: column;
+        padding: 15px 10px;
+        box-shadow: none;
+    }
+    .conteudo .img-sobre img{
+        width: 250px;
+    }
+    .conteudo p{
+        font-size: 18px;
+        text-align: center;
+        width: 100%;
+    }
+    /*projetos */
+    .projetos .conteudo-projetos{
+        padding: 30px 3%;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    .projetos .conteudo-projetos2{
+        padding: 30px 3%;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    .img-port{
+        margin: 20px;
+    }
+    .img-port2{
+        margin: 20px;
+    }
+    .img-port3{
+        margin: 20px;
+    }
+    .img-port4{
+        margin: 20px;
+    }
+    .img-port5{
+        margin: 20px;
+    }
+    .img-port6{
+        margin: 20px;
+    }
+    /* meus serviços */
+    .inicio-servicos{
+        margin-top: 10%;
+    }
+    .servi{
+        flex-direction: column;
+        margin-top: 10%;
+    }
+    .servicos{
+        margin: 10px;
+        text-align: center;
+    }
+    .servi img{
+        width: 90%;
+    }
+    .servicos .h1-servicos{
+        font-size: 22px;
+    }
+    .servicos .orcamento{
+        padding: 8px 8px;
+    }
+    .servicos .orcamento a{
+        font-size: 25px; 
+    }
+    /* serviços 2 */
+    .servicos2{
+        margin: 10px;
+        text-align: center;
+    }
+    .servicos2 .h1-servicos2{
+        font-size: 22px;
+    }
+    .servicos2 .orcamento2{
+        padding: 8px 8px;
+    }
+    .servicos2 .orcamento2 a{
+        font-size: 25px; 
+    }
+    
+}
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
