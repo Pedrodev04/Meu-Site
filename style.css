@@ -6,7 +6,7 @@
 body {
     color: white;
     font-family: poppins;
-    background:linear-gradient(to left, red,rgb(45, 41, 41),black,red);
+    background-color:#000000b8;
     height: 100vh;
 }
 /* topo do site */
@@ -348,6 +348,7 @@ header a:hover{
     margin-top: 5%;
     box-shadow: 2px 2px 20px white;
     text-decoration: none;
+    color: black;
 }
 .vermais:focus {
     outline: none;
