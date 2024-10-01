@@ -6,7 +6,7 @@
 body {
     color: white;
     font-family: poppins;
-    background-color:#000000b8;
+    background-color:black;
     height: 100vh;
 }
 /* topo do site */
@@ -118,7 +118,6 @@ header a:hover{
     position: relative;
     animation: flutuar 2s ease-in-out infinite alternate;
     margin-bottom: 10px;
-    border-radius: 15% 15% 0 0; /* ajuste o valor conforme necessário para controlar o arredondamento */
     box-shadow: 2px 2px 20px white;
 }     
 @keyframes flutuar{
@@ -238,7 +237,7 @@ header a:hover{
     margin-right: 50px;
 }
 .conteudo .img-sobre img{
-    border-radius: 15% 0 15% 0;
+    border-radius: 15px;
     width: 250px;
     box-shadow: 2px 2px 20px white;
     animation: zoom 5s infinite; /* 5 segundos de duração, repete infinitamente */
@@ -865,7 +864,7 @@ header a:hover{
     }
     .inicio-txt .texto p{
         font-size: 18px;
-        text-align: center;
+        text-align: left;
         width: 100%;
     }
     /* sobre mim */
@@ -894,7 +893,7 @@ header a:hover{
     }
     .conteudo p{
         font-size: 18px;
-        text-align: center;
+        text-align: left;
         width: 100%;
     }
     /*projetos */

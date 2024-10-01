@@ -1,3 +1,5 @@
+var nome = window.prompt('Qual o seu nome?')
+window.alert(`Olá ${nome}! Seja bem vindo ao meu portfólio!`)
 window.addEventListener('scroll', function() {
     var scrollArrow = document.getElementById('scroll-arrow');
     if (scrollArrow) {
